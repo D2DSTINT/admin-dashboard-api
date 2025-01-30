@@ -28,5 +28,10 @@ app.use((err, req, res, next) => {
     next(err); // Pass to default error handler if it's not a CORS error
 });
 
+app.get("/", (req, res) => {
+    res.status(200).json("{status: 'Server is running'}");
+});
+
+
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
