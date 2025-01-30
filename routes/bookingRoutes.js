@@ -1,10 +1,10 @@
-const express = require("express");
-const {
+import { Router } from "express";
+import {
     acceptBooking,
     rejectBooking,
     getAllBookings,
-} = require("../controllers/bookingController");
-const router = express.Router();
+} from "../controllers/bookingController.js";
+const router = Router();
 
 // PUT route to accept a booking
 router.put("/:id/accept", acceptBooking);
@@ -15,4 +15,4 @@ router.put("/:id/reject", rejectBooking);
 // GET Route to fetch all bookings
 router.get("/", getAllBookings);
 
-module.exports = router;
+export default router;

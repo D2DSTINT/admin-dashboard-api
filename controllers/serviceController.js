@@ -1,6 +1,6 @@
-const { v4: uuidv4 } = require("uuid"); // Import uuid to generate unique ids
-const Service = require("../models/Service");
-const Dashboard = require("../models/Dashboard"); // Import the Dashboard model
+import { v4 as uuidv4 } from "uuid"; // Import the uuid package to generate unique IDs
+import { Service } from "../models/Service.js"; // Import the Service model
+import { Dashboard } from "../models/Dashboard.js"; // Import the Dashboard model
 
 const getAllServices = async (req, res) => {
     try {
@@ -128,8 +128,4 @@ const deleteService = async (req, res) => {
     }
 };
 
-module.exports = {
-    addService,
-    deleteService,
-    getAllServices,
-};
+export { getAllServices, addService, updateService, deleteService };

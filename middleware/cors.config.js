@@ -1,4 +1,5 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const allowedOrigins =
     process.env.NODE_ENV === "production"
@@ -24,4 +25,4 @@ const corsOptions = {
     },
 };
 
-module.exports = corsOptions;
+export default corsOptions;

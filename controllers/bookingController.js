@@ -1,5 +1,5 @@
-const Booking = require("../models/Booking"); // Assuming the Booking model is correctly set up
-const Dashboard = require("../models/Dashboard");
+import { Booking } from "../models/Booking.js";
+import { Dashboard } from "../models/Dashboard.js";
 
 // fetch all Bookings
 const getAllBookings = async (req, res) => {
@@ -85,8 +85,4 @@ const rejectBooking = async (req, res) => {
     }
 };
 
-module.exports = {
-    acceptBooking,
-    rejectBooking,
-    getAllBookings,
-};
+export { getAllBookings, acceptBooking, rejectBooking };
