@@ -12,9 +12,9 @@ connectDB();
 
 app.use(express.json()); // Middleware to parse JSON requests
 app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded requests
-app.options("*", cors(corsOptions));
+
 // Use Booking routes
-app.use("/api/bookings", bookingRoutes);
+app.use("/api/bookings", cors(corsOptions), bookingRoutes);
 // Use Service routes
 app.use("/api/services", cors(corsOptions), serviceRoutes);
 
